@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="or">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bauri Bandhu Lenka — Odia Author</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --ink: #1a1208;
+  --parchment: #f7f2e8;
+  --gold: #b8922a;
+  --gold-light: #e8c96a;
+  --deep: #2c1f0e;
+  --muted: #7a6a52;
+  --border: rgba(184,146,42,0.25);
+  --card-bg: rgba(255,250,238,0.9);
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'EB Garamond', serif;
+  background: var(--parchment);
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 4rem;
+  border-bottom: 0.5px solid var(--border);
+  background: rgba(247,242,232,0.97);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  color: var(--muted);
+  text-transform: uppercase;
+  font-family: 'EB Garamond', serif;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold); }
+
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  min-height: 90vh;
+}
+.hero-left {
+  padding: 6rem 5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(160deg, #f7f2e8 60%, #ede4cc);
+}
+.hero-divider { background: var(--border); }
+.hero-right {
+  padding: 6rem 5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--deep);
+  color: var(--parchment);
+  position: relative;
+  overflow: hidden;
+}
+.hero-right::before {
+  content: '"';
+  position: absolute;
+  top: -3rem;
+  right: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 22rem;
+  color: rgba(184,146,42,0.07);
+  line-height: 1;
+  pointer-events: none;
+}
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.75rem;
+  display: block;
+}
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 4vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--deep);
+  margin-bottom: 0.6rem;
+}
+.hero-name-odia {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--gold);
+  font-style: italic;
+  margin-bottom: 2.5rem;
+  display: block;
+}
+.hero-desc {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 400px;
+  line-height: 1.85;
+  margin-bottom: 3rem;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 3px;
+  cursor: pointer;
+  font-family: 'EB Garamond', serif;
+  transition: opacity 0.2s;
+}
+.hero-cta:hover { opacity: 0.7; }
+.hero-quote {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: rgba(247,242,232,0.88);
+  line-height: 1.85;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+.hero-quote-attr {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  position: relative;
+  z-index: 1;
+}
+.stat-row {
+  display: flex;
+  gap: 3rem;
+  margin-top: 4rem;
+  position: relative;
+  z-index: 1;
+  padding-top: 2.5rem;
+  border-top: 0.5px solid rgba(184,146,42,0.2);
+}
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  display: block;
+}
+.stat-label {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(247,242,232,0.45);
+}
+
+/* SECTIONS */
+section { padding: 6rem 5rem; }
+.section-label {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  display: block;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--deep);
+  margin-bottom: 3.5rem;
+  line-height: 1.25;
+}
+
+/* BOOKS */
+.books-section { background: var(--deep); }
+.books-section .section-title { color: var(--parchment); }
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+.book-card {
+  border: 0.5px solid rgba(184,146,42,0.3);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.book-card:hover { transform: translateY(-6px); }
+.book-cover {
+  height: 340px;
+  overflow: hidden;
+  position: relative;
+}
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.book-card:hover .book-cover img { transform: scale(1.04); }
+.book-cover-plain {
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: rgba(255,250,238,0.05);
+  border: 1px dashed rgba(184,146,42,0.2);
+}
+.book-info {
+  padding: 1.5rem;
+  background: rgba(255,250,238,0.05);
+  border-top: 0.5px solid rgba(184,146,42,0.2);
+}
+.book-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  color: var(--parchment);
+  margin-bottom: 0.4rem;
+}
+.book-genre {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+/* WRITINGS */
+.writings-section { background: var(--parchment); }
+.writings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.writing-card {
+  background: var(--card-bg);
+  border: 0.5px solid var(--border);
+  border-radius: 4px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  position: relative;
+}
+.writing-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--gold);
+  opacity: 0;
+  transition: opacity 0.2s;
+  border-radius: 4px 0 0 4px;
+}
+.writing-card:hover { border-color: rgba(184,146,42,0.6); }
+.writing-card:hover::before { opacity: 1; }
+.writing-date {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.85rem;
+  display: block;
+}
+.writing-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: var(--deep);
+  margin-bottom: 0.85rem;
+  line-height: 1.4;
+}
+.writing-excerpt {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+.writing-tag {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 0.5px solid var(--gold);
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+
+/* ABOUT */
+.about-section {
+  background: #ede4cc;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  padding: 0;
+}
+.about-image {
+  min-height: 500px;
+  background: var(--deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.about-initials {
+  font-family: 'Playfair Display', serif;
+  font-size: 8rem;
+  color: rgba(184,146,42,0.2);
+  user-select: none;
+}
+.about-text {
+  padding: 6rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about-text .section-title { margin-bottom: 1.5rem; color: var(--deep); }
+.about-body {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.95;
+  margin-bottom: 1.5rem;
+}
+
+/* ORNAMENT */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.2rem;
+  letter-spacing: 0.6em;
+  margin: 4rem 0 0;
+  opacity: 0.45;
+}
+
+/* FOOTER */
+footer {
+  background: var(--deep);
+  color: rgba(247,242,232,0.45);
+  padding: 2.5rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+.footer-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  color: var(--gold-light);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-left > * {
+  animation: fadeUp 0.7s ease both;
+}
+.hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-left > *:nth-child(2) { animation-delay: 0.25s; }
+.hero-left > *:nth-child(3) { animation-delay: 0.35s; }
+.hero-left > *:nth-child(4) { animation-delay: 0.45s; }
+.hero-left > *:nth-child(5) { animation-delay: 0.55s; }
+.hero-right > * { animation: fadeUp 0.7s ease both; animation-delay: 0.4s; }
+
+@media (max-width: 900px) {
+  nav { padding: 1rem 2rem; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-divider { display: none; }
+  .hero-right { min-height: 40vh; padding: 3rem 2rem; }
+  .hero-left { padding: 4rem 2rem; }
+  section { padding: 4rem 2rem; }
+  .books-grid, .writings-grid { grid-template-columns: 1fr 1fr; }
+  .about-section { grid-template-columns: 1fr; }
+  .about-image { min-height: 200px; }
+  .about-text { padding: 3rem 2rem; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 2rem; }
+}
+@media (max-width: 600px) {
+  .books-grid, .writings-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">Bauri Bandhu Lenka</span>
+  <ul class="nav-links">
+    <li><a href="#books">Books</a></li>
+    <li><a href="#writings">Writings</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <span class="eyebrow">Odia Author &amp; Poet</span>
+    <h1 class="hero-name">Bauri Bandhu<br>Lenka</h1>
+    <span class="hero-name-odia">ବଉରି ବନ୍ଧୁ ଲେଙ୍କା</span>
+    <p class="hero-desc">A voice carrying the depth of classical Odia literature — poet, author, and keeper of language across generations.</p>
+    <a class="hero-cta" href="#writings">Explore his writings →</a>
+  </div>
+  <div class="hero-divider"></div>
+  <div class="hero-right">
+    <span class="eyebrow" style="color: var(--gold-light);">Featured quote</span>
+    <p class="hero-quote">"Words are the bridge between the soul and the world — Odia literature has built that bridge for a thousand years."</p>
+    <span class="hero-quote-attr">— Bauri Bandhu Lenka</span>
+    <div class="stat-row">
+      <div class="stat">
+        <span class="stat-num">2+</span>
+        <span class="stat-label">Published Books</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">100+</span>
+        <span class="stat-label">Facebook Writings</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">Odia</span>
+        <span class="stat-label">Language</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="books-section" id="books">
+  <span class="section-label">Published works</span>
+  <h2 class="section-title">Books</h2>
+  <div class="books-grid">
+    <div class="book-card">
+      <div class="book-cover">
+        <img src="meghaduta.jpeg" alt="ମେଘଦୂତ book cover">
+      </div>
+      <div class="book-info">
+        <p class="book-title">ମେଘଦୂତ (Meghaduta)</p>
+        <span class="book-genre">Classical Poetry</span>
+      </div>
+    </div>
+    <div class="book-card">
+      <div class="book-cover">
+        <img src="kumarasambhava.jpeg" alt="କୁମାରସମ୍ଭବ book cover">
+      </div>
+      <div class="book-info">
+        <p class="book-title">କୁମାରସମ୍ଭବ (Kumarasambhava)</p>
+        <span class="book-genre">Classical Epic</span>
+      </div>
+    </div>
+    <div class="book-card" style="border-style: dashed; display:flex; flex-direction:column; align-items:center; justify-content:center; cursor:default; opacity:0.4;">
+      <div class="book-cover-plain">
+        <span style="font-size: 2.5rem; color: var(--gold-light);">+</span>
+        <p style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:rgba(247,242,232,0.4); margin-top:0.5rem;">More books</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="writings-section" id="writings">
+  <span class="section-label">From Facebook</span>
+  <h2 class="section-title">Recent Writings</h2>
+  <div class="writings-grid">
+    <div class="writing-card">
+      <span class="writing-date">May 2025</span>
+      <h3 class="writing-title">ଜୀବନ ଓ ଭାଷା — Language as Life</h3>
+      <p class="writing-excerpt">A reflection on the Odia language as not merely a medium of communication but the very breath of our cultural identity and belonging.</p>
+      <span class="writing-tag">Essay</span>
+    </div>
+    <div class="writing-card">
+      <span class="writing-date">April 2025</span>
+      <h3 class="writing-title">ପ୍ରକୃତି ଓ ମଣିଷ — Nature and Man</h3>
+      <p class="writing-excerpt">In the rustling of leaves and the song of the Mahanadi, one finds the eternal conversation between nature and the human spirit.</p>
+      <span class="writing-tag">Poetry</span>
+    </div>
+    <div class="writing-card">
+      <span class="writing-date">March 2025</span>
+      <h3 class="writing-title">ସ୍ମୃତି — Memories</h3>
+      <p class="writing-excerpt">Memories do not fade — they settle like sediment at the bottom of the river, shaping the very ground on which we walk and speak.</p>
+      <span class="writing-tag">Prose</span>
+    </div>
+    <div class="writing-card">
+      <span class="writing-date">February 2025</span>
+      <h3 class="writing-title">ସଂସ୍କୃତ ଓ ଓଡ଼ିଆ — Two Rivers, One Sea</h3>
+      <p class="writing-excerpt">The relationship between Sanskrit and Odia is not one of imitation but of inheritance — a river that flows gracefully from its ancient source.</p>
+      <span class="writing-tag">Reflection</span>
+    </div>
+    <div class="writing-card">
+      <span class="writing-date">January 2025</span>
+      <h3 class="writing-title">ଓଡ଼ିଶା ଓ ତାର ସାହିତ୍ୟ — Odisha and its Literature</h3>
+      <p class="writing-excerpt">Odisha's literature is as vast as its coastline — stretching from the devotional songs of the Panchasakhas to the modern prose of today.</p>
+      <span class="writing-tag">Essay</span>
+    </div>
+    <div class="writing-card">
+      <span class="writing-date">December 2024</span>
+      <h3 class="writing-title">ଶୀତ ଋତୁ — Of Winter and Words</h3>
+      <p class="writing-excerpt">Winter arrives in Odisha not with snow but with stillness — the perfect companion for a poet's contemplation and a reader's solitude.</p>
+      <span class="writing-tag">Poetry</span>
+    </div>
+  </div>
+  <div class="ornament">✦ · · · ✦</div>
+</section>
+
+<div class="about-section" id="about">
+  <div class="about-image">
+    <span class="about-initials">ବ · ଲ</span>
+  </div>
+  <div class="about-text">
+    <span class="section-label">The author</span>
+    <h2 class="section-title">About Bauri Bandhu Lenka</h2>
+    <p class="about-body">Bauri Bandhu Lenka is a distinguished Odia author and poet, known for his mastery of classical literary forms and his ability to render ancient Sanskrit epics into luminous Odia prose and verse.</p>
+    <p class="about-body">His celebrated works — including <em>ମେଘଦୂତ</em> (Meghaduta) and <em>କୁମାରସମ୍ଭବ</em> (Kumarasambhava) — reflect a deep reverence for Odia literary tradition alongside a modern sensibility that connects with readers across generations.</p>
+    <p class="about-body">He continues to write prolifically, sharing reflections, poetry, and essays with his readers on Facebook and through his published works — a tireless keeper of the Odia literary flame.</p>
+    <a class="hero-cta" href="#writings">Read his writings →</a>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-name">Bauri Bandhu Lenka</span>
+  <span>© 2025 · All writings reserved</span>
+  <span>ବଉରି ବନ୍ଧୁ ଲେଙ୍କା</span>
+</footer>
+
+</body>
+</html>
